@@ -16,8 +16,8 @@
  
 <header>
 
-<img class="img" src="assets/img/radio.jpg" width=95 height=95>
-    <h1 >Bienvenido a Radio Mixer en vivo!</h1>
+<img class="img" src="assets/img/logo.jpg" ><b>Radio Mixer en vivo!</b>
+
 </header>  
 
 

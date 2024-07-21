@@ -1,0 +1,9 @@
+__ci_last_regenerate|i:1721450537;_ci_previous_url|s:44:"http://localhost/ProT3_31472190/list_usuario";id_usuario|s:1:"2";nombre|s:7:"Soledad";apellido|s:5:"Lopez";email|s:13:"sol@gmail.com";usuario|s:5:"Admin";perfil_id|s:1:"1";logged_in|b:1;mensaje|s:237:"<!-- DEBUG-VIEW START 1 SYSTEMPATH\Validation\Views\list.php -->
+	<div class="errors" role="alert">
+		<ul>
+					<li>The email field is required.</li>
+				</ul>
+	</div>
+
+<!-- DEBUG-VIEW ENDED 1 SYSTEMPATH\Validation\Views\list.php -->
+";__ci_vars|a:1:{s:7:"mensaje";s:3:"old";}

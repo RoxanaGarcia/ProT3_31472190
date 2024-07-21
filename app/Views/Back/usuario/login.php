@@ -14,13 +14,13 @@
                <span>Use su correo y contraseña</span>
                 <div class="container-input">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" name="email" placeholder="Email" value="sol@gmail.com" > 
-                    <!-- leyra3117@gmail.com" -->
+                    <input type="text" name="email" placeholder="Email" value="" > 
+                   
                 </div>
                 <div class="container-input">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password"  name="password" placeholder="Password" Value="123456">
-                    <!-- Value="12345678" -->
+                    <input type="password"  name="password" placeholder="Password" Value="">
+                  
                 </div>
                 <input type="submit" value="Ingresar" class="btn btn-success">
                 <a href="<?php echo base_url('/login');?>" class="btn btn-success">Cancelar</a>

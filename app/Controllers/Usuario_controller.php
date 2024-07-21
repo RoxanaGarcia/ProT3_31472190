@@ -58,5 +58,74 @@ class Usuario_controller extends Controller{
             }
         }
     }
+
+    public function listado(){
+
+        $model= new Usuario_model();
+        $datos = $model->getUsuarios();
+
+        $data['titulo']='Listado Usuario';
+        echo view('front/head_view',$data);
+        echo view('front/navbar_view');
+        echo view('back/usuario/list_usuario',compact('datos')); 
+        echo view('front/footer_view');
+    }
+
+    public function editar($id){
+        // exit('ver');
+        $model= new Usuario_model();
+        $dato = $model->get_Usuario($id);
+
+        $data['titulo']='Modificar Usuario';
+        echo view('front/head_view',$data);
+        echo view('front/navbar_view');
+        echo view('back/usuario/editar',compact('dato')); 
+        echo view('front/footer_view');
+    }
     
+    public function modificar(){
+
+
+
+     $validacion = $this->validate([
+        'nombre'=> 'required',
+        'apellido'=> 'required',
+        'usuario'=> 'required',
+        // 'email'=> 'required',
+        'password'=> 'required'
+     ]);
+    
+     if ($validacion){
+    $datos = [
+     'id_usuario' => $_POST['id'],
+     'nombre' => $_POST['nombre'],
+     'apellido' => $_POST['apellido'],
+     'usuario' => $_POST['usuario'],
+    //  'email' => $_POST['email'],
+     'pass' => $_POST['password']
+        ];
+
+    //  print_r($_POST);exit;
+        $id=$_POST['id'];
+        $model = new Usuario_model();
+        $model->modificar_Usuario($id,$datos);
+
+        session()->setFlashdata('mensje','Registro modificado satisfactoriamente');
+       return redirect()->to(base_url('list_usuario'));
+
+    }else{
+       $error= $this->validator->listErrors();
+       session()->setFlashdata('mensaje',$error);
+       return redirect()->to(base_url('list_usuario'));
+    }     
+}
+
+public function eliminar($id){
+    $model = new Usuario_model();
+    $model->deleteUsuario($id);
+
+    session()->setFlashdata('mensje','Registro modificado satisfactoriamente');
+       return redirect()->to(base_url('list_usuario'));
+}
+
 }
